@@ -19,6 +19,8 @@ lvim.lsp.diagnostics.virtual_text = false
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
+vim.opt.list = true
+vim.opt.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,nbsp:."
 
 -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
