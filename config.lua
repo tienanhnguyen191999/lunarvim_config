@@ -9,18 +9,18 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 -- User Config for predefined plugins
-lvim.builtin.dashboard.active = true
+lvim.builtin.alpha.active = true
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.filters.dotfiles = true
 lvim.builtin.nvimtree.show_icons.git = 0
-lvim.lsp.diagnostics.virtual_text = false
-lvim.builtin.treesitter.ensure_installed = "maintained"
-lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.ensure_installed = "all"
 lvim.builtin.treesitter.highlight.enabled = true
+lvim.lsp.diagnostics.virtual_text = false
 vim.opt.list = true
-vim.opt.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,nbsp:."
+vim.opt.listchars = "tab:→/,trail:~,space:·"
+vim.opt.cmdheight = 1
 
 -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
@@ -58,5 +58,5 @@ lvim.autocommands.custom_groups = {
   { "BufWinEnter", "*.php", "setlocal ts=4 sw=4" },
   { "BufWinEnter", "*.js", "setlocal ts=2 sw=2" },
   { "BufWinEnter", "*.vue", "setlocal ts=2 sw=2" },
+  { "VimEnter", "*", "highlight WhiteSpace guifg=#3B3E3D guibg=None" },
 }
-
